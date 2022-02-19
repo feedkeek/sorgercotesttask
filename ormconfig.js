@@ -9,7 +9,7 @@ module.exports = {
   username: DB_CONFIG.dbUser,
   password: DB_CONFIG.dbPassword,
   database: DB_CONFIG.dbName,
-  entities: ['dist/src/entities/*.js', 'dist/src/entities/**/*.js'],
+  entities: ['dist/entities/*.js', 'dist/entities/**/*.js'],
   cli: {
     migrationsDir: 'db/migrations',
   },
