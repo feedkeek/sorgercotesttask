@@ -2,7 +2,7 @@ import {
   Column,
   Entity,
   JoinColumn,
-  OneToOne,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Customer } from './Customer.entity';
@@ -21,7 +21,10 @@ export class Order {
   @Column('decimal', { precision: 2 })
   TotalAmount: number;
 
-  @OneToOne(() => Customer, (customer) => customer.CustomerId)
+  @Column('int')
+  CustomerId: number;
+
+  @ManyToOne(() => Customer, (customer) => customer.CustomerId)
   @JoinColumn([
     {
       name: 'FK_Order_CustomerId_Customer',
